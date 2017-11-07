@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QQInfoAppDoi.View.FinalizeTaskPage"
+             BackgroundColor="{Binding BackgroundColor}"
+             Padding="10,10,10,10"
+             Title="{Binding FinalizeTaskTitle}">
+  <StackLayout Spacing="17">
+    <Label Text="{Binding TaskName}" BackgroundColor="{Binding BackgroundColor}" TextColor="{Binding TextColor}" FontSize="19" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" HorizontalOptions="CenterAndExpand"/>
+    <Slider x:Name="GoodPiecesSlider" Minimum="0" Maximum="{Binding NumberOfPieces}" Value="0" ValueChanged="ValueChangedFromSlider"/>
+    <Entry x:Name="VaueEntry" Placeholder="Introduceti numarul de bucati reusite" BackgroundColor="{Binding BackgroundColor}" TextColor="{Binding TextColor}" Keyboard="Numeric" Unfocused="EntryUnfocusd" HorizontalOptions="CenterAndExpand"/>
+    <Label Text="{Binding Result}" BackgroundColor="{Binding BackgroundColor}" TextColor="{Binding TextColor}" FontSize="17" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"/>
+    <StackLayout Orientation="Horizontal" Padding="10,25,10,10" Spacing="25" HorizontalOptions="CenterAndExpand">
+      <Button Text="Ok" BackgroundColor="{Binding BackgroundColor}" TextColor="{Binding TextColor}" BorderWidth="1" BorderColor="{Binding TextColor}" Clicked="OnOkButtonClicked" HorizontalOptions="CenterAndExpand"/>
+      <Button Text="Cancel" BackgroundColor="{Binding BackgroundColor}" TextColor="{Binding TextColor}" BorderWidth="1" BorderColor="{Binding TextColor}" Clicked="OnCancelButtonClicked" HorizontalOptions="CenterAndExpand"/>
+    </StackLayout>
+  </StackLayout>
+</ContentPage>

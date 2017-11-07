@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QQInfoAppDoi.View.StepDetailsPage"
+             BackgroundColor="{Binding BackgroundColor}"
+             Title="{Binding StepDetailsTitle}"
+             Padding="10,10,10,10">
+  <StackLayout Padding="3,3,3,3" Spacing="13">
+    <Label Text="{Binding EquipmentLabel}" BackgroundColor="{Binding BackgroundColor}" TextColor="{Binding TextColor}" FontSize="19" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" HorizontalOptions="CenterAndExpand"/>
+    <ListView x:Name="IngredientsListView" ItemsSource="{Binding IngredientsCollection}"
+                  ItemSelected="IngredientSelected" BackgroundColor="{Binding BackgroundColor}" SeparatorColor="{Binding TextColor}">
+      <ListView.Header>
+        <Label Text="Necessary ingredients: " BackgroundColor="White" TextColor="#003366" FontSize="21" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand"/>
+      </ListView.Header>
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <Grid>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition Width="3*"/>
+              </Grid.ColumnDefinitions>
+              <Label Grid.Column="0" Text="{Binding Name}" BackgroundColor="{Binding BackgroundColor}" TextColor="{Binding TextColor}" FontSize="17" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"/>
+              <Label Grid.Column="1" Text="{Binding Grammage}" BackgroundColor="{Binding BackgroundColor}" TextColor="{Binding TextColor}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+            </Grid>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+    <StackLayout Orientation="Horizontal" Padding="3,3,3,3" Spacing="25" HorizontalOptions="CenterAndExpand">
+      <Button Text="Ok" BackgroundColor="{Binding BackgroundColor}" TextColor="{Binding TextColor}" BorderWidth="1" BorderColor="{Binding TextColor}" Clicked="OnOkButtonClicked" HorizontalOptions="CenterAndExpand"/>
+      <Button Text="Cancel" BackgroundColor="{Binding BackgroundColor}" TextColor="{Binding TextColor}" BorderWidth="1" BorderColor="{Binding TextColor}" Clicked="OnCancelButtonClicked" HorizontalOptions="CenterAndExpand"/>
+    </StackLayout>
+  </StackLayout>
+</ContentPage>
